@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="icon" href="images/favicon.png">
+    <title>Blackjack</title>
+    <script>
+    function displayNavBar() 
+    {
+        var x = document.getElementById("overlay-container");
+        if (x.style.display === "none" || x.style.display === "")
+        {
+            x.style.display = "flex";
+        } 
+        else {
+            x.style.display = "none";
+        }
+    }
+    </script>
+</head>
+<body>
+    <header id="header-container">
+        <div id="home-container" >
+            <a id="home-item"  href="index.html">
+                <i id="home-icon" class="fab fa-phoenix-squadron"></i>
+                <h1 id="home-title">Blackjack</h1>
+                <h1 id="home-short-title">21</h1>
+            </a>
+            <a href="javascript:void(0);" class="nav-icon" onclick="displayNavBar()">
+                    <i class="fa fa-bars"></i>
+             </a>
+        </div>
+    </header>
+    <main>
+        <div id="overlay-container">
+            <nav id="nav-bar-container">
+                    <a id="nav-buttons" href="index.html">
+                            <i class="fas fa-bacon"></i>
+                            <h1 id="enhance-title">Old Version</h1>
+                    </a>
+            </nav>
+        </div>
+        <article>
+            <h1 id="title">Blackjack</h1>
+            <h4>by Manos Prekas</h4>
+            <br>
+            <!-- <object id="card-1" type="image/svg+xml" data="images/clubs/10c.svg">
+            </object> -->
+            <!-- <embed id="player-card-1" type="image/svg+xml" src="images/clubs/10c.svg"/> -->
+            <!-- <object id="card-2" type="image/svg+xml" data="images/clubs/1c.svg">
+            </object> -->
+            <div id="text-area"></div>
+            <p id="dealer-text-area"></p>
+            <div id="dealer-cards-area">
+                
+            </div>
+            <p id="player-text-area"></p>
+            <div id="player-cards-area">
+                <!-- <embed id="player-card-0" type="image/svg+xml" src=""/>
+                <embed id="player-card-1" type="image/svg+xml" src=""/> -->
+            </div>
+
+            
+            <button id="new-game-button">New Game!</button>
+            <button id="hit-button">Hit!</button>
+            <button id="stay-button">Stay</button>
+            
+            <script src="script.js"></script>
+        </article>
+    </main>
+
+</body>
+</html>
