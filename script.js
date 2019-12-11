@@ -250,7 +250,6 @@ function createElement(cardSuit, cardValue, folder){
   embedObject.type = "image/svg+xml";
   let path = "images/" + folder + "/" + cardValue + cardSuit + ".svg";
   embedObject.src = path;
-  embedObject.style.display = 'inline-block';
   return embedObject;
 }
 
