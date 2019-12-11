@@ -15,14 +15,14 @@ let hitButton = document.getElementById('hit-button');
 let stayButton = document.getElementById('stay-button');
 let sound = document.createElement("audio");
 
-let player = { cards: [], score: 0, area: "player-cards-area", cardTextArea: document.getElementById("player-text-area"), cardImage: [],
+let player = { cards: [], score: 0, area: document.getElementById("player-cards-area"), cardTextArea: document.getElementById("player-text-area"), cardImage: [],
     get score(){
       let _score = getScore(this.cards);
       this.cardTextArea.innerText = "Player Score: " + _score;
       return _score;
     }
     },
-    dealer = { cards: [], score: 0, area: "dealer-cards-area", cardTextArea: document.getElementById("dealer-text-area"), cardImage: [],
+    dealer = { cards: [], score: 0, area: document.getElementById("dealer-cards-area"), cardTextArea: document.getElementById("dealer-text-area"), cardImage: [],
     get score(){
       let _score = getScore(this.cards);
       this.cardTextArea.innerText = "Dealer Score: " + _score;
@@ -189,15 +189,14 @@ function showCardsToImage(currentPlayer){
   
   for (let i = 0; i < currentPlayer.cards.length; i++){
     currentPlayer.cardImage[i] = getCardImage(currentPlayer.cards[i].suit, currentPlayer.cards[i].value, currentPlayer.area);
-    document.getElementById(currentPlayer.area).appendChild(currentPlayer.cardImage[i]);
-    
+    currentPlayer.area.appendChild(currentPlayer.cardImage[i]);
   }
 
 }
 
 function newCardToImage(card, area){
     let cardImage = getCardImage(card.suit, card.value, area);
-    document.getElementById(area).appendChild(cardImage);
+    area.appendChild(cardImage);
 }
 
 function shuffleDeck(deck){
@@ -249,9 +248,9 @@ function getScore(cardArray){
 function createElement(cardSuit, cardValue, folder){
   let embedObject = document.createElement('embed');
   embedObject.type = "image/svg+xml";
-  embedObject.style.display = 'inline';
   let path = "images/" + folder + "/" + cardValue + cardSuit + ".svg";
   embedObject.src = path;
+  embedObject.style.display = 'inline-block';
   return embedObject;
 }
 

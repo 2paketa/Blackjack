@@ -4,6 +4,12 @@ embed{
     animation: 500ms ease-out 0s 1 slideInFromLeft;
     margin-right: 5px;
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+#player-cards-area{
+  display: flex;
+  overflow: hidden;
 }
 
 rect{
