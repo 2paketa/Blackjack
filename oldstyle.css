@@ -4,7 +4,6 @@ embed{
     animation: 500ms ease-out 0s 1 slideInFromLeft;
     margin-right: 5px;
     overflow: hidden;
-    border: solid 2px black;
     box-sizing: border-box;
 }
 
